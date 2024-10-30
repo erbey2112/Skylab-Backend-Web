@@ -19,7 +19,7 @@ public class Restaurant {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "name",nullable=false, length=50 )
     private String name;
 
 

@@ -1,6 +1,6 @@
 package com.akademi.skylab;
 
-import com.akademi.skylab.entities.Restaurant
+import com.akademi.skylab.entities.Restaurant;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,47 +1,76 @@
 package com.akademi.skylab.entities;
 
-public class RestaurantTable {
-    private int id;
-    private String name;
-    private String capacity;
-    private String reservedBy;
-    private String restaurant;
+import jakarta.persistence.*;
 
-    public int RestaurantTable(int id, String name, String capacity, String reservedBy, String restaurant) {
+@Entity
+@Table(name = "tables")
+public class RestaurantTable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="id")
+    private int id;
+
+    @Column(name = "capacity")
+    private int capacity;
+
+    @Column(name= "is Reserved")
+    private boolean isReserved;
+
+    @Column(name = "reserved by")
+    private String reservedBy;
+
+    @ManyToOne
+    @JoinColumn(name = "restaurant id")
+    private Restaurant restaurant;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
         this.id = id;
-        this.name = name;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
+    public boolean isReserved() {
+        return isReserved;
+    }
+
+    public void setReserved(boolean reserved) {
+        isReserved = reserved;
+    }
+
+
+
+    public String getReservedBy() {
+        return reservedBy;
+    }
+
+    public void setReservedBy(String reservedBy) {
+        this.reservedBy = reservedBy;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
+    public RestaurantTable(int id, int capacity, boolean isReserved, String reservedBy, Restaurant restaurant) {
+        this.id = id;
+        this.capacity = capacity;
+        this.isReserved = isReserved;
         this.reservedBy = reservedBy;
         this.restaurant = restaurant;
-        public int getid () {
-            return id;
-        }
-        public void setid ( int id){
-            this.id = id;
-        }
-        public String getname () {
-            return name;
-        }
-        public void setname (String name){
-            this.name = name;
-        }
-        public String capacity () {
-            return capacity;
-        }
-        public void setcapacity (String capacity){
-            this.capacity = capacity;
-        }
-        public String getreservedBy () {
-            return reservedBy;
-        }
-        public void setreservedBy (String reservedBy){
-            this.reservedBy = reservedBy;
-        }
-        public String getrestaurant () {
-            return restaurant;
-        }
-        public void setrestaurant (String restaurant){
-            this.restaurant = restaurant;
-        }
     }
+
 }

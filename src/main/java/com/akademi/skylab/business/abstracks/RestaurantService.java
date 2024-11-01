@@ -14,7 +14,8 @@ public interface RestaurantService {
 
     void deleteRestaurantById(int id);
 
-    Restaurant getRestaurantByName
+    Restaurant getRestaurantByName (String name) ;
+
 
 
 

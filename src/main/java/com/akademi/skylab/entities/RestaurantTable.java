@@ -24,6 +24,10 @@ public class RestaurantTable {
     @JoinColumn(name = "restaurant id")
     private Restaurant restaurant;
 
+    public RestaurantTable() {
+
+    }
+
     public int getId() {
         return id;
     }

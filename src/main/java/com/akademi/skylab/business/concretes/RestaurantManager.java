@@ -56,4 +56,9 @@ public class RestaurantManager implements RestaurantService {
 
     }
 
+    @Override
+    public Restaurant getRestaurantByName(String name) {
+        return null;
+    }
+
 }
